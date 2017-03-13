@@ -28,7 +28,7 @@
 
   <label for="gender">Gender: <?= !empty($errors['gender']) ? $errors['gender'] : '' ?></label>
   <input type="radio" name="gender" value="male" <?php if (!empty($_POST['gender']) && $_POST['gender'] == 'male') echo 'checked="checked"'; ?>> Male
-  <input type="radio" name="gender" value="Female" <?php if (!empty($_POST['gender']) && $_POST['gender'] == 'female') echo 'checked="checked"'; ?>> Female </br>
+  <input type="radio" name="gender" value="female" <?php if (!empty($_POST['gender']) && $_POST['gender'] == 'female') echo 'checked="checked"'; ?>> Female </br>
   <div id="genderError"></div>
   </br>
 

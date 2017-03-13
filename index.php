@@ -3,7 +3,7 @@
 require 'includes/function.php';
 
 //define variables and set to empty values
-$name = $email = $address = $age = $dob = $gender = $movie = '';
+$name = $email = $address = $age = $dateofbirth = $gender = $movie = '';
 $errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){

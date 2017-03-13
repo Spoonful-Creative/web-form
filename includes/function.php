@@ -18,7 +18,8 @@ function validateEmail($email) {
   if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
     return "Please enter a valid email.";
  	}
-	else if(strlen($email) > 100){
+ 	
+	else if(strlen($email) > 100) {
 	return "Email address cannot be longer than 100 characters.";
 	}
 	return false;
@@ -64,6 +65,8 @@ if (empty($gender)) {
     return "Gender is required";
   }
 }
+
+
 
 
 function validateMovie($movie) {
