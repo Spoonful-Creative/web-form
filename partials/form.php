@@ -1,34 +1,34 @@
 <form action="index.php" method="POST">
 
-  <label for="name"> Full Name: <?= !empty($errors['name']) ? $errors['name'] : '' ?></label>
-  <input id="name" name="name" type="text" placeholder="Full Name" value="<?= !empty($name) ? $name : '' ?>">
+  <label for="name">Full Name: <?= !empty($errors['name']) ? $errors['name'] : '' ?></label>
+  <input id="name" name="name" type="text" placeholder="John Doe" value="<?= !empty($name) ? $name : '' ?>">
   <div id="nameError"></div>
   </br>
 
-  <label for="email"> Email: <?= !empty($errors['email']) ? $errors['email'] : '' ?></label>
-  <input id="email" name="email" type="text" placeholder="Email" value="<?= !empty($email) ? $email : '' ?>">
+  <label for="email">Email: <?= !empty($errors['email']) ? $errors['email'] : '' ?></label>
+  <input id="email" name="email" type="text" placeholder="yourname@email.com" value="<?= !empty($email) ? $email : '' ?>">
   <div id="emailError"></div>
   </br>
 
   <label for="address"> Address: <?= !empty($errors['address']) ? $errors['address'] : '' ?></label>
-  <input id="address" name="address" placeholder="Address" value="<?= !empty($address) ? $address : '' ?>"></br>
+  <input id="address" name="address" placeholder="Address Line 1 <br> Address Line 2 <br> Town or City <br> Country" value="<?= !empty($address) ? $address : '' ?>"></br>
   <div id="addressError"></div>
   </br>
 
   <label for="dateofbirth">Date of Birth: <?= !empty($errors['dateofbirth']) ? $errors['dateofbirth'] : '' ?></label>
-  <input id="dateofbirth" name="dateofbirth" type="date" placeholder="dd/mm/yyyy"onchange="calculateAge(dateofbirth)" value=""<?= !empty($dateofbirth) ? $dateofbirth : '' ?>">
-<div id="dobError"></div>
+  <input id="dateofbirth" name="dateofbirth" type="date" placeholder="value" onchange="calculateAge(dateofbirth)" value=""<?= !empty($dateofbirth) ? $dateofbirth : '' ?>">
+<div id="dateofbirthError"></div>
 </br>
 
 
   <label for="age"> Age: <?= !empty($errors['age']) ? $errors['age'] : '' ?></label>
-  <input id="age" name="age" type="number" min="1" max="150" placeholder="Age" value="<?= !empty($age) ? $age : '' ?>"> <div id="ageError"></div> </br>
+  <input id="age" name="age" type="number" min="1" max="150" placeholder="##" value="<?= !empty($age) ? $age : '' ?>"> <div id="ageError"></div> </br>
 
 
 
   <label for="gender">Gender: <?= !empty($errors['gender']) ? $errors['gender'] : '' ?></label>
   <input type="radio" name="gender" value="male" <?php if (!empty($_POST['gender']) && $_POST['gender'] == 'male') echo 'checked="checked"'; ?>> Male
-  <input type="radio" name="gender" value="Female" <?php if (!empty($_POST['gender']) && $_POST['gender'] == 'female') echo 'checked="checked"'; ?>>Female </br>
+  <input type="radio" name="gender" value="Female" <?php if (!empty($_POST['gender']) && $_POST['gender'] == 'female') echo 'checked="checked"'; ?>> Female </br>
   <div id="genderError"></div>
   </br>
 
