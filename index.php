@@ -25,6 +25,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$errors['dateofbirth'] = validateDateOfBirth($dateofbirth);
 	$errors['movie'] = validateMovie($movie);
 	$errors['gender'] = validateGender($gender);
+
+
+	if (!$errors['name'] && !$errors['email'] && !$errors['address'] && !$errors['dateofbirth'] && !$errors['age'] && !$errors['movie'] && !$errors['gender']) {
+	$formcontent=" From: $name \n Email: $email \n Message: $address";
+	$recipient = "pughsinead@gmail.com";
+	$subject = "Website Form Submission";
+	$mailheader = "From: $email \r\n";
+	
+	mail ($recipient, $subject, $formcontent, $mailheader) or die ("error");
+	require 'partials/thanks.php';
+	die();
+}
 }
 
 
