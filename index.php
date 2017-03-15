@@ -7,7 +7,7 @@ $name = $email = $address = $age = $dateofbirth = $gender = $movie = '';
 $errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-	// die('lolswag');
+// die('lolswag');
 //Add data from form
 	$name = $_POST['name'];
 	$email = $_POST['email'];
@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$dateofbirth = $_POST['dateofbirth'];
 	$gender = !empty($_POST['gender']) ? $_POST['gender'] : '';
 	$movie = $_POST['movie'];
-	
+
 
 	$errors['name'] = validateName($name);
 	$errors['email'] = validateEmail($email);
@@ -28,15 +28,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 
 	if (!$errors['name'] && !$errors['email'] && !$errors['address'] && !$errors['dateofbirth'] && !$errors['age'] && !$errors['movie'] && !$errors['gender']) {
-	$formcontent=" From: $name \n Email: $email \n Message: $address";
-	$recipient = "pughsinead@gmail.com";
-	$subject = "Website Form Submission";
-	$mailheader = "From: $email \r\n";
-	
-	mail ($recipient, $subject, $formcontent, $mailheader) or die ("error");
-	require 'partials/thanks.php';
-	die();
-}
+		$formcontent=" From: $name \n Email: $email \n Message: $address";
+		$recipient = "pughsinead@gmail.com";
+		$subject = "Website Form Submission";
+		$mailheader = "From: $email \r\n";
+
+		mail ($recipient, $subject, $formcontent, $mailheader) or die ("error");
+		require 'partials/thanks.php';
+		die();
+	}
 }
 
 

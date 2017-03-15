@@ -1,4 +1,4 @@
-<form action="index.php" method="POST" autocomplete="off">
+<form action="index.php" method="POST" autocomplete="off" onsubmit="return validate()">
 
   <label for="name">Full Name: <?= !empty($errors['name']) ? $errors['name'] : '' ?></label>
   <input id="name" name="name" type="text" placeholder="John Doe" value="<?= !empty($name) ? $name : '' ?>">
@@ -55,6 +55,6 @@
 <div id="movieError"></div>
 </br>
 
-<button id="submitForm" type="submit" onsubmit=""> Submit </button>
+<button id="submitForm" type="submit"> Submit </button>
 <button id="clearForm" type="reset" value="reset">Clear </button>
-</f
+</form>
