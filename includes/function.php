@@ -1,75 +1,86 @@
 <?php
-//ALL your functions will go inside here
 function validateName($name) {
-  if (empty($name)) {
-    return "Name is required";
-  }
-  if (strlen($name) > 40 || !preg_match("/\s/", $name)) {
-    return "Please enter full name";
-  }
-  else {
-    return false;
-  }
+	if (empty($name)) {
+		return "[PHP] Please enter your full name.";
+	}
+	else if (!preg_match("/\s/", $name)) {
+		return "[PHP] Please enter a valid full name.";
+	}
+	else if(strlen($name) > 40){
+		return "[PHP] Full name cannot exceed 40 characters.";
+	}
+	return false;
 }
 
 
 function validateEmail($email) {
-  if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
-    return "Email is required";
-  }
+	if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+		return "[PHP] Please enter a valid email address.";
+	}
+	else if(strlen($email) > 100) {
+		return "[PHP] Email address cannot exceed 100 characters.";
+	}
+	return false;
 }
+// function validateEmail($email) {
+// 	if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+// 		return "Please enter a valid email.";
+// 	}
+
+// 	else if(strlen($_POST["email"]) > 100) {
+// 		return "Email address cannot be longer than 100 characters.";
+// 	}
+// 	return false;
+// }
 
 
 function validateAddress($address) {
-	if(empty($address)) {
-		return "An address is required";
+	if (empty($address)) {
+		return "[PHP] Please enter your physical address.";
 	}
-	if (strlen($address) > 200 || !preg_match("/\s/", $address)) {
-    return "Please enter full name";
-  }
-  else {
-    return false;
-  }
+	else if(strlen($address) > 200){
+		return "[PHP] Physical address cannot exceed 200 characters.";
+	}
+	return false;
 }
 
 
 function validateDateOfBirth($dateofbirth) {
 	if(empty($dateofbirth)){
-		return "Date of Birth is required";
+		return "[PHP] Please enter your date of birth.";
 	}
 }
 
 
 function validateAge($age) {
-	if(empty($age)){
-		return "Age is required";
+	if (empty($age)) {
+		return "[PHP] Please enter your age.";
 	}
+	else if (preg_match("/^[0-151]+$/", $age)) {
+		return true;  
+	}
+	return false;
 }
 
 
 function validateGender($gender) {
-	if(empty($gender)){
-		return "Please select a gender";
+	if (empty($gender)) {
+		return "[PHP] Please select a gender.";
 	}
 }
 
 
 function validateMovie($movie) {
-	if(empty($movie)){
-		return "Please select a movie";
+	if($movie == 'movie1') {
+		return "[PHP] Please select a movie.";
 	}
 }
 
 
-
-
-
 function dd($data)
 {
-die(var_dump($data));
+	die(var_dump($data));
 }
-
-
 //These do the same function
 // function escape($value)
 // {
