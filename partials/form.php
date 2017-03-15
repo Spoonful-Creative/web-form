@@ -16,9 +16,12 @@
   </br>
 
   <label for="dateofbirth">Date of Birth: <?= !empty($errors['dateofbirth']) ? $errors['dateofbirth'] : '' ?></label>
-  <input id="dateofbirth" name="dateofbirth" type="date" placeholder="dd/mm/yyyy"onchange="calculateAge(dateofbirth)" value=""<?= !empty($dateofbirth) ? $dateofbirth : '' ?>">
+  
+  <input id="dateofbirth" name="dateofbirth" type="date" placeholder="dd/mm/yyyy" onchange="calculateAge(dateofbirth)" value="<?= !empty($dateofbirth) ? $dateofbirth : '' ?>" max="<?=date('Y-m-d')?>" >
 <div id="dobError"></div>
 </br>
+
+
 
 
   <label for="age"> Age: <?= !empty($errors['age']) ? $errors['age'] : '' ?></label>
