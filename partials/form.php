@@ -7,11 +7,11 @@
 
 
 
+
 <label for="email">Email: <?= !empty($errors['email']) ? $errors['email'] : '' ?></label>
 <input id="email" name="email" type="text" placeholder="yourname@email.com" value="<?= !empty($email) ? $email : '' ?>">
 <div id="emailError"></div>
 </br>
-
 
 
 <label for="address"> Address: <?= !empty($errors['address']) ? $errors['address'] : '' ?></label></br>
@@ -23,9 +23,10 @@
 
 
 
-<label for="dateofbirth">Date of Birth: <?= !empty($errors['dateofbirth']) ? $errors['dateofbirth'] : '' ?></label>
-<input id="dateofbirth" name="dateofbirth" type="date" placeholder="dd/mm/yyyy"  value="<?= !empty($dateofbirth) ? $dateofbirth : '' ?>">
-<div id="dateofbirthError"></div>
+ <label for="dateofbirth">Date of Birth: <?= !empty($errors['dateofbirth']) ? $errors['dateofbirth'] : '' ?></label>
+  
+  <input id="dateofbirth" name="dateofbirth" type="date" placeholder="dd/mm/yyyy" onchange="calculateAge(dateofbirth)" value="<?= !empty($dateofbirth) ? $dateofbirth : '' ?>" max="<?=date('Y-m-d')?>" >
+<div id="dobError"></div>
 </br>
 <!-- onchange="calculateAge(dateofbirth)" -->
 
@@ -33,6 +34,9 @@
 
 <label for="age"> Age: <?= !empty($errors['age']) ? $errors['age'] : '' ?></label>
 <input id="age" name="age" type="number" min="1" max="150" placeholder="##" value="<?= !empty($age) ? $age : '' ?>"> <div id="ageError"></div> </br>
+
+
+
 
 
 
