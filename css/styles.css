@@ -1,0 +1,37 @@
+body {
+	background-image: url('../img/background-form-2.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;	
+}
+
+.form-container {
+	margin: 0 auto;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	/*border: .25em solid #FFFFFF;
+	border-radius: 30px;*/
+	width: 800px;
+	height: auto;
+	padding: 30px;
+}
+
+label {
+	color: #FFFFFF;
+}
+
+input, textarea {
+	border: 0;
+	outline: 0;
+	background: transparent;
+	border-bottom: 1px solid #FFFFFF;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #FFFFFF;
+}
+
+#nameError, #emailError, #addressError, #ageError, #dateofbirthError, #genderError, #movieError{
+	color: #FFFFFF;
+}  
