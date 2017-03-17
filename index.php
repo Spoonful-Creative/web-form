@@ -7,7 +7,6 @@ $name = $email = $address = $age = $dateofbirth = $gender = $movie = '';
 $errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-// die('lolswag');
 //Add data from form
 	$name = $_POST['name'];
 	$email = $_POST['email'];

@@ -1,37 +1,37 @@
-body {
-	background-image: url('../img/background-form-2.jpg');
+/*body {
+	background-color: #282828;*/
+	/*background-image: url('../img/background-form-2.jpg');
 	background-size: cover;
-	background-repeat: no-repeat;	
+	background-repeat: no-repeat;	*/
+/*}*/
+
+
+
+/*.container {
 }
 
-.form-container {
+.banner {
+	height: 100px;
+	margin-bottom: 20px
 	margin: 0 auto;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	/*border: .25em solid #FFFFFF;
-	border-radius: 30px;*/
-	width: 800px;
-	height: auto;
-	padding: 30px;
+	background-color: red;
 }
 
-label {
-	color: #FFFFFF;
+p {
+	color: #ffffff;
+	font-size: 2em;
 }
 
-input, textarea {
-	border: 0;
-	outline: 0;
-	background: transparent;
-	border-bottom: 1px solid #FFFFFF;
+form{*/
+	/*background-color: rgba(255, 255, 255, 0.8)*/; 
+/*	border-radius: 20px;
+}*/
+
+/*#form-left{
+	background-color: purple darken-4;
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #FFFFFF;
-}
-
-#nameError, #emailError, #addressError, #ageError, #dateofbirthError, #genderError, #movieError{
-	color: #FFFFFF;
-}  
+#form-right{
+	background-image: url('../img/background-form.jpg');
+	height: 600px;
+}*/
