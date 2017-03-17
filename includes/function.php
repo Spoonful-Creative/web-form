@@ -13,6 +13,7 @@ function validateName($name) {
 }
 
 
+
 function validateEmail($email) {
 	if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
 		return "[PHP] Please enter a valid email address.";
@@ -22,16 +23,7 @@ function validateEmail($email) {
 	}
 	return false;
 }
-// function validateEmail($email) {
-// 	if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
-// 		return "Please enter a valid email.";
-// 	}
 
-// 	else if(strlen($_POST["email"]) > 100) {
-// 		return "Email address cannot be longer than 100 characters.";
-// 	}
-// 	return false;
-// }
 
 
 function validateAddress($address) {
@@ -45,6 +37,7 @@ function validateAddress($address) {
 }
 
 
+<<<<<<< HEAD
 // function validateDateOfBirth($dateofbirth) {
 // 	if(empty($dateofbirth)){
 // 		return "[PHP] Please enter your date of birth.";
@@ -69,7 +62,87 @@ function validateDateOfBirth($dateofbirth) {
 	}
 return false;
 
+=======
+
+//Validate Function//
+function validateDateOfBirth($dateofbirth) {
+    if (empty($dateofbirth)) {
+        return 'Date of Birth is required.';
+    }
+
+    if (!checkDateManually($dateofbirth)) {
+        return 'Please enter a correct Date of Birth.';
+    }
+
+    if (DateTime::createFromFormat('Y-m-d', $dateofbirth)) {
+        $dateofbirth = DateTime::createFromFormat('Y-m-d', $dateofbirth);
+    }
+    else if (DateTime::createFromFormat('Y/m/d', $dateofbirth)) {
+        $dateofbirth = DateTime::createFromFormat('Y/m/d', $dateofbirth);
+    }
+    else if (DateTime::createFromFormat('d-m-Y', $dateofbirth)) {
+        $dateofbirth = DateTime::createFromFormat('d-m-Y', $dateofbirth);
+    }
+    else if (DateTime::createFromFormat('d/m/Y', $dateofbirth)) {
+        $dateofbirth = DateTime::createFromFormat('d/m/Y', $dateofbirth);
+    }
+    else {
+        return 'Please enter a correct Date of Birth.';
+    }
+
+    $time = new DateTime('now');
+    $today = new DateTime('now');
+
+    $date150YearsAgo = DateTime::createFromFormat('Y-m-d', $time->modify('-150 Year')->format('Y-m-d'));
+
+    $chosenDate = $dateofbirth->format('Y-m-d');
+    $chosenDay = $dateofbirth->format('d');
+    $chosenMonth = $dateofbirth->format('m');
+    $chosenYear = $dateofbirth->format('Y');
+    $todaysDate = $today->format('Y-m-d');
+    $minDate = $date150YearsAgo->format('Y-m-d');
+
+    if ($chosenDate <= $minDate){
+        return 'We really don\'t think you were born more than 150 years ago.';
+    }
+    else if ($chosenDate >= $todaysDate){
+        return 'You cannot be born after today.';
+    }
+    else if (!checkdate($chosenMonth, $chosenDay, $chosenYear)) {
+        return 'Please enter a correct Date of Birth.';
+    }
+
+    return false;
+>>>>>>> Adding-CSS
 }
+
+function checkDateManually($dateofbirth) {
+    $dateArray = [];
+
+    if(strpos($dateofbirth, '/') !== false) {
+        $dateArray = explode("/", $dateofbirth);
+    }
+    else if(strpos($dateofbirth, '-') !== false){
+        $dateArray = explode("-", $dateofbirth);
+    }
+
+    if (empty($dateArray)) {
+        return false;
+    }
+
+    if($dateArray && count($dateArray) === 3 && (int)$dateArray[0] > 0 && (int)$dateArray[1] > 0 && (int)$dateArray[2] > 0) {
+        if (checkdate($dateArray[1], $dateArray[2], $dateArray[0])) {
+            return true;
+        } else if (checkdate($dateArray[1], $dateArray[0], $dateArray[2])) {
+            return true;
+        }
+        return false;
+    }
+
+    return false;
+}
+
+//Validate Date Function Ends//
 
 
 function validateAge($age) {
@@ -83,12 +156,12 @@ function validateAge($age) {
 }
 
 
+
 function validateGender($gender) {
-	if (empty($gender)) {
+	if ($gender == 'gender1') {
 		return "[PHP] Please select a gender.";
 	}
 }
-
 
 
 
@@ -97,6 +170,7 @@ function validateMovie($movie) {
 		return "[PHP] Please select a movie.";
 	}
 }
+
 
 
 function dd($data)

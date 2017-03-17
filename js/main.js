@@ -3,8 +3,8 @@ function validate() {
 	var nameError = validateName();
 	var emailError = validateEmail();
 	var addressError = validateAddress();
-	// var ageError = validateAge();
-	// var dateofbirthError = validateDateOfBirth();
+	var ageError = validateAge();
+	var dateofbirthError = validateDateOfBirth();
 	var genderError = validateGender();
 	var movieError = validateMovie();
 
@@ -12,19 +12,26 @@ function validate() {
 	console.log('Name: ' + nameError);
 	console.log('Email: ' + emailError);
 	console.log('Address: ' + addressError);
-	// console.log('Age: ' + ageError);
-	// console.log('DateOfBirth' + dateofbirthError);
+	console.log('Age: ' + ageError);
+	console.log('DateOfBirth:' + dateofbirthError);
 	console.log('Gender: ' + genderError);
 	console.log('Movie: ' + movieError);
 
-	if (!nameError && !emailError && !addressError && !genderError && !movieError)
+	if (!nameError && !emailError && !addressError && !ageError && !dateofbirthError && !genderError && !movieError)
 	{
 		return false;
 	}
 		return true;
 }
 
-
+// var today = new Date();
+// today.setFullYear( today.getFullYear() - 150 );
+// $('.datepicker').pickadate({
+//     selectMonths: true, 
+//     selectYears: 150,
+//     min: today,
+//     max: new Date()
+//   });
 
 
 
@@ -79,19 +86,80 @@ function validateAddress(){
 }
 
 
-function validateGender() {
-	var radios = document.getElementsByName("gender");
-	var formValid = false;
-	document.getElementById('genderError').innerHTML = '';
+function validateAge(){
+   age= document.getElementById("age").value;
+   if(age =""){
+    document.getElementById("ageError").innerHTML= "";
+    return true;
+   }
+  else{
+   document.getElementById("ageError").innerHTML="[JS] Please enter your age";
+   return false;
+  }
+}
 
-	var i = 0;
-	while (!formValid && i < radios.length) {
-		if (radios[i].checked) formValid = true;
-		i++;        
+
+function validateDateOfBirth(){
+	var dateofbirth = document.getElementById('dateofbirth');
+	var calculatedAge = getAge(dateofbirth.value);
+	var dateofbirth = document.getElementById('age').value;
+	
+	if (calculatedAge != dateofbirth.value || parseInt(dateofbirth.value) >= 150 || parseInt(dateofbirth.value) < 0) {
+		document.getElementById("ageError").innerHTML = "[JS] Please enter a valid age";
+		return false;
 	}
+	else 
+	{
+		document.getElementById("ageError").innerHTML = "";
+		return true;
+	}
+}
 
-	if (!formValid) document.getElementById("genderError").innerHTML = '[JS] Please select a gender.';
-	return formValid;
+
+function getAge(dateofbirth) {
+	var today = new Date();
+	var birthDate = new Date(dateofbirth);
+	var age = today.getFullYear() - birthDate.getFullYear();
+	var m = today.getMonth() - birthDate.getMonth();
+	if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+		age-- 
+	}
+		return age;
+}
+
+function calculateAge() {
+	var dateofbirth = document.getElementById('dateofbirth');
+	var calculatedAge = getAge(dateofbirth.value);
+	document.getElementById('age').value = calculatedAge;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function validateGender() {
+	gender = document.getElementById('gender').selectedIndex ;
+	if (gender == 0){
+		document.getElementById('genderError').innerHTML = "[JS] Please select a gender.";
+		return false
+	}
+	else 
+	{
+		document.getElementById('genderError').innerHTML = "";
+		return true
+	}
 }
 
 
@@ -107,3 +175,7 @@ function validateMovie(){
 		return true
 	}
 }
+
+// $(document).ready(function() {
+//     $('select').material_select();
+//   });
