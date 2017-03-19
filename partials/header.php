@@ -8,13 +8,12 @@
 	<title>PHP Form Assessment</title>
 
 	<!-- Compiled and minified CSS -->
-	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
 
 	<!--Import Google Icon Font-->
-	<!-- <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
-	
 </head>
 
 <body>

@@ -182,6 +182,6 @@ function validateMovie(){
 //END OF MOVIE VALIDATION//
 
 
-// $(document).ready(function() {
-//     $('select').material_select();
-//   });
+$(document).ready(function() {
+    $('select').material_select();
+  });

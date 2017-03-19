@@ -1,22 +1,9 @@
-<!-- <div class="container">
+<div class="container">
+
 	<div class="row">
-		<div class="col s12 m12 l12">
-			<div class="banner">
-				<p> Add content here</p>
-			</div>
-		</div>
-	</div>
-</div> -->
+     	<div class="col s12 m12 l12">
 
-
-<!-- <div class="container"> -->
-
-<!-- Page Layout here -->
-<!-- <div class="row"> -->
-
-   <!--  <div id="form-left" class="col l6"> -->
-     
-		<form id="form" action="index.php" method="POST" autocomplete="off" onsubmit="return validate()">
+			<form id="form" action="index.php" method="POST" autocomplete="off" onsubmit="return validate()">
 
 
 			<!-- <div class="input-field">
@@ -24,7 +11,8 @@
 				<label for="name">Full Name: <?= !empty($errors['name']) ? $errors['name'] : '' ?></label>
 				<input id="name" name="name" type="text" data-length="40" value="<?= !empty($name) ? $name : '' ?>">
 				<div id="nameError"></div>
-	<!-- 		</div> -->
+			<!--</div> -->
+
 
 
 
@@ -37,12 +25,14 @@
 
 
 
+
 			<!-- <div class="input-field">
 			<i class="material-icons prefix">mode_edit</i> -->
 				<label for="address"> Address: <?= !empty($errors['address']) ? $errors['address'] : '' ?></label>
 				<textarea id="address" name="address" data-length="200" value="<?= !empty($address) ? $address : '' ?>"></textarea>
 				<div id="addressError"></div>
 			<!-- </div> -->
+
 
 
 
@@ -54,11 +44,13 @@
 
 
 
+
 			<!-- <div class="input-field">
 				<i class="material-icons prefix">mode_edit</i> -->
 				<label for="age"> Age: <?= !empty($errors['age']) ? $errors['age'] : '' ?></label>
 				<input id="age" name="age" type="number" min="1" max="150" value="<?= !empty($age) ? $age : '' ?>"> <div id="ageError"></div>
 			<!-- </div> -->
+
 
 
 
@@ -89,14 +81,7 @@
 	
 			<button id="submitForm" type="submit"> Submit </button>
 			<button id="clearForm" type="reset" value="reset">Clear </button>
-		</form>
-	<!-- </div> -->
-
-
-	<!-- <div id="form-right" class="col l6">
-	        Teal page content 
-	 	</div>
-
-	    </div>
-	</div> -->
-<!-- </div>	 -->
+			</form>
+		</div>
+	</div>
+</div>
