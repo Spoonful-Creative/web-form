@@ -17,11 +17,11 @@ function validate() {
 	console.log('Gender: ' + genderError);
 	console.log('Movie: ' + movieError);
 
-	if (!nameError && !emailError && !addressError && !ageError && !dateofbirthError && !genderError && !movieError)
+	if (nameError && emailError && addressError && ageError && dateofbirthError && genderError && movieError)
 	{
-		return false;
-	}
 		return true;
+	}
+		return false;
 }
 
 var today = new Date();
@@ -97,13 +97,13 @@ function validateAddress(){
 //AGE VALIDATION//
 function validateAge(){
    age= document.getElementById("age").value;
-   if(age =""){
-    document.getElementById("ageError").innerHTML= "";
-    return true;
+   if(age === ""){
+     document.getElementById("ageError").innerHTML="[JS] Please enter your age";
+   return false;
    }
   else{
-   document.getElementById("ageError").innerHTML="[JS] Please enter your age";
-   return false;
+   document.getElementById("ageError").innerHTML= "";
+    return true;
   }
 }
 //END OF AGE VALIDATION//
@@ -114,15 +114,15 @@ function validateAge(){
 function validateDateOfBirth(){
 	var dateofbirth = document.getElementById('dateofbirth');
 	var calculatedAge = getAge(dateofbirth.value);
-	var dateofbirth = document.getElementById('age').value;
+	var age = document.getElementById('age').value;
 	
-	if (calculatedAge != dateofbirth.value || parseInt(dateofbirth.value) >= 150 || parseInt(dateofbirth.value) < 0) {
+	if (calculatedAge != age || parseInt(age) >= 150 || parseInt(age) < 0) {
 		document.getElementById("ageError").innerHTML = "[JS] Please enter a valid age";
 		return false;
 	}
 	else 
 	{
-		document.getElementById("ageError").innerHTML = "";
+		document.getElementById("ageError").innerHTML = "is a valid age";
 		return true;
 	}
 }
@@ -149,6 +149,7 @@ function calculateAge() {
 
 
 
+
 //GENDER VALIDATION//
 function validateGender() {
 	gender = document.getElementById('gender').selectedIndex ;
@@ -163,6 +164,7 @@ function validateGender() {
 	}
 }
 //END OF GENDER VALIDATION//
+
 
 
 
