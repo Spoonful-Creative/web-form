@@ -24,14 +24,14 @@ function validate() {
 		return true;
 }
 
-// var today = new Date();
-// today.setFullYear( today.getFullYear() - 150 );
-// $('.datepicker').pickadate({
-//     selectMonths: true, 
-//     selectYears: 150,
-//     min: today,
-//     max: new Date()
-//   });
+var today = new Date();
+today.setFullYear( today.getFullYear() - 150 );
+$('.datepicker').pickadate({
+    selectMonths: true, 
+    selectYears: 150,
+    min: today,
+    max: new Date()
+  });
 
 
 //NAME VALIDATION//

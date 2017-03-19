@@ -1,37 +1,10 @@
-/*body {
-	background-color: #282828;*/
-	/*background-image: url('../img/background-form-2.jpg');
+body {
+	background-image: url('../img/form-background.jpeg');
 	background-size: cover;
-	background-repeat: no-repeat;	*/
-/*}*/
-
-
-
-/*.container {
+	background-repeat: no-repeat;	
 }
 
-.banner {
-	height: 100px;
-	margin-bottom: 20px
-	margin: 0 auto;
-	background-color: red;
+#form-body{
+background-color: rgba(255, 255, 255, 0.7);
+border-radius: 20px;
 }
-
-p {
-	color: #ffffff;
-	font-size: 2em;
-}
-
-form{*/
-	/*background-color: rgba(255, 255, 255, 0.8)*/; 
-/*	border-radius: 20px;
-}*/
-
-/*#form-left{
-	background-color: purple darken-4;
-}
-
-#form-right{
-	background-image: url('../img/background-form.jpg');
-	height: 600px;
-}*/
