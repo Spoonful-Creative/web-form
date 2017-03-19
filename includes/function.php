@@ -1,4 +1,5 @@
 <?php
+//NAME VALIDATION//
 function validateName($name) {
 	if (empty($name)) {
 		return "[PHP] Please enter your full name.";
@@ -11,9 +12,11 @@ function validateName($name) {
 	}
 	return false;
 }
+//END OF NAME VALIDATION//
 
 
 
+//EMAIL VALIDATION//
 function validateEmail($email) {
 	if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
 		return "[PHP] Please enter a valid email address.";
@@ -23,9 +26,11 @@ function validateEmail($email) {
 	}
 	return false;
 }
+//END OF EMAIL VALIDATION//
 
 
 
+//ADDRESS VALIDATION//
 function validateAddress($address) {
 	if (empty($address)) {
 		return "[PHP] Please enter your physical address.";
@@ -35,10 +40,11 @@ function validateAddress($address) {
 	}
 	return false;
 }
+//END OF ADDRESS VALIDATION//
 
 
 
-//Validate Function//
+//DOB VALIDATION//
 function validateDateOfBirth($dateofbirth) {
     if (empty($dateofbirth)) {
         return 'Date of Birth is required.';
@@ -114,10 +120,11 @@ function checkDateManually($dateofbirth) {
 
     return false;
 }
+//END OF DOB VALIDATION//
 
-//Validate Date Function Ends//
 
 
+//AGE VALIDATION//
 function validateAge($age) {
 	if (empty($age)) {
 		return "[PHP] Please enter your age.";
@@ -127,22 +134,27 @@ function validateAge($age) {
 	}
 	return false;
 }
+//END OF AGE VALIDATION//
 
 
 
+//GENDER VALIDATION//
 function validateGender($gender) {
 	if ($gender == 'gender1') {
 		return "[PHP] Please select a gender.";
 	}
 }
+//END OF GENDER VALIDATION//
 
 
 
+//MOVIE VALIDATION//
 function validateMovie($movie) {
 	if($movie == 'movie1') {
 		return "[PHP] Please select a movie.";
 	}
 }
+//END OF MOVIE VALIDATION//
 
 
 
@@ -150,12 +162,7 @@ function dd($data)
 {
 	die(var_dump($data));
 }
-//These do the same function
-// function escape($value)
-// {
-// 	return e($value);
-// }
-//
+
 function e($value)
 {
 	return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');

@@ -34,7 +34,7 @@ function validate() {
 //   });
 
 
-
+//NAME VALIDATION//
 function validateName(){
 
 	fullName = document.getElementById('name').value; 
@@ -48,8 +48,11 @@ function validateName(){
 		document.getElementById('nameError').innerHTML = "[JS] Please enter a valid full name.";
 	return false;
 }
+//END OF NAME VALIDATION//
 
 
+
+//EMAIL VALIDATION//
 function validateEmail(){
 
 	mailAddress = document.getElementById('email').value; 
@@ -66,8 +69,11 @@ function validateEmail(){
 		return false;
 	}
 }
+//END OF EMAIL VALIDATION//
 
 
+
+//ADDRESS VALIDATION//
 function validateAddress(){
 
 	address = document.getElementById('address').value; 
@@ -84,8 +90,11 @@ function validateAddress(){
 		return false;
 	}
 }
+//END OF ADDRESS VALIDATION//
 
 
+
+//AGE VALIDATION//
 function validateAge(){
    age= document.getElementById("age").value;
    if(age =""){
@@ -97,8 +106,11 @@ function validateAge(){
    return false;
   }
 }
+//END OF AGE VALIDATION//
 
 
+
+//DOB VALIDATION//
 function validateDateOfBirth(){
 	var dateofbirth = document.getElementById('dateofbirth');
 	var calculatedAge = getAge(dateofbirth.value);
@@ -127,28 +139,17 @@ function getAge(dateofbirth) {
 		return age;
 }
 
+
 function calculateAge() {
 	var dateofbirth = document.getElementById('dateofbirth');
 	var calculatedAge = getAge(dateofbirth.value);
 	document.getElementById('age').value = calculatedAge;
 }
+//END OF DOB VALIDATION//
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//GENDER VALIDATION//
 function validateGender() {
 	gender = document.getElementById('gender').selectedIndex ;
 	if (gender == 0){
@@ -161,8 +162,11 @@ function validateGender() {
 		return true
 	}
 }
+//END OF GENDER VALIDATION//
 
 
+
+//MOVIE VALIDATION//
 function validateMovie(){
 	movie = document.getElementById('movie').selectedIndex ;
 	if (movie == 0){
@@ -175,6 +179,8 @@ function validateMovie(){
 		return true
 	}
 }
+//END OF MOVIE VALIDATION//
+
 
 // $(document).ready(function() {
 //     $('select').material_select();
