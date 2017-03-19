@@ -37,32 +37,6 @@ function validateAddress($address) {
 }
 
 
-<<<<<<< HEAD
-// function validateDateOfBirth($dateofbirth) {
-// 	if(empty($dateofbirth)){
-// 		return "[PHP] Please enter your date of birth.";
-// 	}
-// }
-
-function validateDateOfBirth($dateofbirth) {
-	if ($dateofbirth == '') {
-	return "Date of Birth is required";
-	}
-	
-	$time = new DateTime('now');
-
-	$newtime = $time->modify('-150 Year')->format('Y-m-d');
-
-	if ($dateofbirth == '') {
-		return "Date of Birth is required";
-	}
-	else if ($dateofbirth <= $newtime){
-	
-		return "We really dont think you were born more than 150 years ago.";
-	}
-return false;
-
-=======
 
 //Validate Function//
 function validateDateOfBirth($dateofbirth) {
@@ -113,7 +87,6 @@ function validateDateOfBirth($dateofbirth) {
     }
 
     return false;
->>>>>>> Adding-CSS
 }
 
 function checkDateManually($dateofbirth) {
