@@ -44,7 +44,7 @@
 
 						<i class="material-icons prefix">home</i>
 							<label for="address"> Address: <?= !empty($errors['address']) ? $errors['address'] : '' ?></label>
-							<textarea id="address" class="materialize-textarea" name="address" data-length="200" value="<?= !empty($address) ? $address : '' ?>"></textarea>
+							<textarea id="address" class="materialize-textarea" type="text"  name="address" data-length="200" value="<?= !empty($address) ? $address : '' ?>"> </textarea>
 						<div id="addressError"></div>
 					</div>
 				</div>
@@ -108,7 +108,7 @@
 			<div class="row">
       			<div class="col s12 m12 l12">
 					<div class="right">
-						<button id="submitForm" class="btn waves-effect waves-light" type="submit" name="action"> Submit 
+						<button id="submitForm" class="btn waves-effect waves-light" type="submit" name="action"> Submit
 						<i class="material-icons right">send</i>
 						</button>
 

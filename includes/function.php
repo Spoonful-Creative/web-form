@@ -35,7 +35,7 @@ function validateAddress($address) {
 	if (empty($address)) {
 		return "[PHP] Please enter your physical address.";
 	}
-	else if(strlen($address) > 200){
+	else if(strlen($address) > 200 || !preg_match("/\s/", $address)){
 		return "[PHP] Physical address cannot exceed 200 characters.";
 	}
 	return false;
