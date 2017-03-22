@@ -71,7 +71,7 @@ function validateAddress($address) {
 function validateDateOfBirth($dateofbirth) {
     // Checks a value had been entered 
     if (empty($dateofbirth)) {
-        return 'Date of Birth is required';
+        return 'Please enter your date of birth';
     }
 
     if (!checkDateManually($dateofbirth)) {

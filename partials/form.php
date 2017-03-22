@@ -163,7 +163,7 @@
 					<!--END SUBMIT Button-->
 
 					<!--CLEAR Button-->
-						<button type="reset" value="reset" id="clearFields" class="btn waves-effect waves-light" onclick="clearForm()" > Clear
+						<button id="clearFields" type="reset" value="reset"  class="btn waves-effect waves-light" onclick="clearForm()" > Clear
 						<i class="material-icons right">undo</i>
 						</button>
 					<!--END CLEAR Button-->
