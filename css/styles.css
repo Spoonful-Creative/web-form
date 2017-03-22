@@ -145,20 +145,16 @@ button.picker__close:focus, button.picker__today:focus, button.picker__clear:foc
 }
 
 
-
-
-
-
 #center-page {
-	padding: 30vh;
+	padding: 10vh;
 }
 
 #thanks-page{
-	width: 100%
+	/*margin-top: */
 	padding: 20px;
 	border-radius: 10px;
 	background-color: #ffffff;
-/*	border: solid #ffc107 5px;*/
+	border: solid #ffc107 5px;
 }
 
 a{
@@ -173,3 +169,36 @@ a{
 label.name{
 	color: #ffc107;
 }
+
+/*@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+	h1{
+	text-align: left;
+	font-size: 5.5em;
+	font-weight: 600;
+	color: #ffffff;
+	font-style: black;
+	border-top: #ffc107 solid 3px; 
+	border-bottom: #ffc107 solid 3px;
+}
+
+	h2{
+	text-align: center;
+	font-size: 1.5em;
+	font-weight: 400;
+	color: #ffc107;
+	font-style: black;
+	}
+	
+	img#open-mail{
+		width: 100px;
+		height: 100px;
+	}	
+
+	/*BUTTON STYLES*/
+/*#submitForm, #clearFields, #resetForm{
+	background-color: #ffc107;
+	position: center;
+}
+}
+
+*/*/
