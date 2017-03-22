@@ -1,3 +1,4 @@
+//      **Input Validation**
 function validate() {
 
 	var nameError = validateName();
@@ -23,11 +24,13 @@ function validate() {
 	}
 		return false;
 }
+//      **END OF INPUT Validation**
 
 
-//NAME VALIDATION//
+
+//      **NAME Validation**
 function validateName(){
-
+	// Length of name must be between 3-40 characters
 	fullName = document.getElementById('name').value; 
 	pos1 = fullName.indexOf(" "); 
 	if (pos1 >= 0 && fullName.length > 3 && fullName.length < 40) {
@@ -36,41 +39,43 @@ function validateName(){
 		document.getElementById('nameError').style.padding = "";
 		return true;
 	}
-	else 
+	// Otherwise return error
+	else {
 		document.getElementById('nameError').innerHTML = "Please enter a valid full name.";
 		document.getElementById('nameError').style.padding = "5px";
-	return false;
+		return false;
+	}
 }
-//END OF NAME VALIDATION//
+//      **END NAME Validation**
 
 
 
-//EMAIL VALIDATION//
+//      **EMAIL Validation**
 function validateEmail(){
-
+	//Email must include @ and . and not exceed 100 characters
 	mailAddress = document.getElementById('email').value; 
 	pos1 = mailAddress.indexOf("@");
 	pos2 = mailAddress.indexOf("."); 
 	if (pos1 >= 0 && pos2 >= 0 && mailAddress.length < 100) {
 
 		document.getElementById('emailError').innerHTML = "";
-			document.getElementById('emailError').style.padding = "";
+		document.getElementById('emailError').style.padding = "";
 		return true;
 	}
-	else 
-	{
+	// Otherwise return error
+	else {
 		document.getElementById('emailError').innerHTML = "Please enter a valid e-mail address.";
 		document.getElementById('emailError').style.padding = "5px";
 		return false;
 	}
 }
-//END OF EMAIL VALIDATION//
+//      **END NAME Validation**
 
 
 
-//ADDRESS VALIDATION//
+//      **ADDRESS Validation**
 function validateAddress(){
-
+	// Length of address must include # + space and not exceed 200 characters
 	address = document.getElementById('address').value; 
 	pos1 = address.indexOf(" ");
 
@@ -80,36 +85,38 @@ function validateAddress(){
 		document.getElementById('addressError').style.padding = "";
 		return true;
 	}
-	else 
-	{
+	// Otherwise return error
+	else {
 		document.getElementById('addressError').innerHTML = address + "Please enter your physical address.";
 		document.getElementById('addressError').style.padding = "5px";
 		return false;
 	}
 }
-//END OF ADDRESS VALIDATION//
+//      **END ADDRESS Validation**
 
 
 
-//AGE VALIDATION//
+//      **AGE Validation**
 function validateAge(){
-   age= document.getElementById("age").value;
-   if(age === ""){
-     document.getElementById("ageError").innerHTML="Please enter your age";
-     document.getElementById('ageError').style.padding = "5px";
-   return false;
-   }
-  else{
-   document.getElementById("ageError").innerHTML= "";
-    document.getElementById('ageError').style.padding = "";
-    return true;
-  }
+	 // Checks a value has been entered 
+	age= document.getElementById("age").value;
+	// Otherwise return error
+	if(age === ""){
+    	document.getElementById("ageError").innerHTML="Please enter your age";
+    	document.getElementById('ageError').style.padding = "5px";
+  		return false;
+   	}
+  	else {
+   		document.getElementById("ageError").innerHTML= "";
+    	document.getElementById('ageError').style.padding = "";
+   		return true;
+  	}
 }
-//END OF AGE VALIDATION//
+//      **END AGE Validation**
 
 
 
-//DOB VALIDATION//
+//      **DOB Validation**
 function validateDateOfBirth(){
 	var dateofbirth = document.getElementById('dateofbirth');
 	var calculatedAge = getAge(dateofbirth.value);
@@ -120,8 +127,7 @@ function validateDateOfBirth(){
 		document.getElementById('dateofbirthError').style.padding = "5px";
 		return false;
 	}
-	else 
-	{
+	else {
 		document.getElementById("dateofbirthError").innerHTML = "";
 		document.getElementById('dateofbirthError').style.padding = "";
 		return true;
@@ -146,22 +152,12 @@ function calculateAge() {
 	var calculatedAge = getAge(dateofbirth.value);
 	document.getElementById('age').value = calculatedAge;
 }
-//END OF DOB VALIDATION//
-
-// var today = new Date();
-
-// today.setFullYear( today.getFullYear() - 150 );
-// $('.datepicker').pickadate({
-// 	format: 'mm/dd/yyyy',
-//     selectMonths: true, 
-//     selectYears: 150,
-//     min: today,
-//     max: new Date()
-//   });
+//      **END DOB Validation**
 
 
 
-//GENDER VALIDATION//
+//      **GENDER Validation**
+
 function validateGender() {
 	gender = document.getElementById('gender').selectedIndex ;
 	if (gender == 0){
@@ -169,19 +165,17 @@ function validateGender() {
 		document.getElementById('genderError').style.padding = "5px";
 		return false
 	}
-	else 
-	{
+	else {
 		document.getElementById('genderError').innerHTML = "";
 		document.getElementById('genderError').style.padding = "";
 		return true
 	}
 }
-//END OF GENDER VALIDATION//
+//      **GENDER Validation**
 
 
 
-
-//MOVIE VALIDATION//
+//      **MOVIE Validation**
 function validateMovie(){
 	movie = document.getElementById('movie').selectedIndex ;
 	if (movie == 0){
@@ -189,19 +183,19 @@ function validateMovie(){
 		document.getElementById('movieError').style.padding = "5px";
 		return false
 	}
-	else 
-	{
+	else {
 		document.getElementById('movieError').innerHTML = "";
 		document.getElementById('movieError').style.padding = "";
 		return true
 	}
 }
-//END OF MOVIE VALIDATION//
+//      **END MOVIE Validation**
 
-//Reset Form
+
+
+// Clear Error messages when clear button is pressed 
 function clearForm(){
 	document.getElementById("form").reset();
-
 	clearName()
 	clearEmail()
 	clearAddress()
@@ -210,44 +204,45 @@ function clearForm(){
 	clearGender()
 	clearMovie()
 
-function clearName(){
-document.getElementById("nameError").innerHTML = "";
-document.getElementById('nameError').style.padding = "";
+	//      **clearName Error**
+	function clearName(){
+	document.getElementById("nameError").innerHTML = "";
+	document.getElementById('nameError').style.padding = "";
+	}
+
+	//      **clearEmail Error**
+	function clearEmail(){
+	document.getElementById("emailError").innerHTML = "";
+	document.getElementById('emailError').style.padding = "";
+	}
+
+	//      **clearAddress Error**
+	function clearAddress(){
+	document.getElementById("addressError").innerHTML = "";
+	document.getElementById('addressError').style.padding = "";
+	}
+
+	//      **clearDOB Error**
+	function clearDateOfBirth(){
+	document.getElementById("dateofbirthError").innerHTML = "";
+	document.getElementById('dateofbirthError').style.padding = "";
+	}
+
+	//      **clearAge Error**
+	function clearAge(){
+	document.getElementById("ageError").innerHTML = "";
+	document.getElementById('ageError').style.padding = "";
+	}
+
+	//      **clearGender Error**
+	function clearGender(){
+	document.getElementById("genderError").innerHTML = "";
+	document.getElementById('genderError').style.padding = "";
+	}
+
+	//      **clearMovie Error**
+	function clearMovie(){
+	document.getElementById("movieError").innerHTML = "";
+	document.getElementById('movieError').style.padding = "";
+	}
 }
-
-function clearEmail(){
-document.getElementById("emailError").innerHTML = "";
-document.getElementById('emailError').style.padding = "";
-}
-
-function clearAddress(){
-document.getElementById("addressError").innerHTML = "";
-document.getElementById('addressError').style.padding = "";
-}
-
-function clearDateOfBirth(){
-document.getElementById("dateofbirthError").innerHTML = "";
-document.getElementById('dateofbirthError').style.padding = "";
-}
-
-function clearAge(){
-document.getElementById("ageError").innerHTML = "";
-document.getElementById('ageError').style.padding = "";
-}
-
-function clearGender(){
-document.getElementById("genderError").innerHTML = "";
-document.getElementById('genderError').style.padding = "";
-}
-
-function clearMovie(){
-document.getElementById("movieError").innerHTML = "";
-document.getElementById('movieError').style.padding = "";
-}
-
-}
-
-
-// $(document).ready(function() {
-//     $('select').material_select();
-//   });
