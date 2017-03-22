@@ -32,13 +32,16 @@ function validateEmail($email) {
 
 //ADDRESS VALIDATION//
 function validateAddress($address) {
-	if (empty($address)) {
-		return "[PHP] Please enter your physical address.";
-	}
-	else if(strlen($address) > 200 || !preg_match("/\s/", $address)){
-		return "[PHP] Physical address cannot exceed 200 characters.";
-	}
-	return false;
+    if (empty($address)) {
+    return "[PHP] Please enter an address";
+    }
+    else if (!preg_match("/^[0-9]+\ +[a-zA-Z]/", $address)) {
+       return "[PHP] Please enter your physical address";
+    }
+    else if(strlen($address) > 200){
+    return "[PHP] Physical address cannot exceed 200 characters.";
+    }
+    return false;
 }
 //END OF ADDRESS VALIDATION//
 
@@ -47,11 +50,11 @@ function validateAddress($address) {
 //DOB VALIDATION//
 function validateDateOfBirth($dateofbirth) {
     if (empty($dateofbirth)) {
-        return 'Date of Birth is required.';
+        return '[PHP] Date of Birth is required.';
     }
 
     if (!checkDateManually($dateofbirth)) {
-        return 'Please enter a correct Date of Birth.';
+        return '[PHP] Please enter a correct Date of Birth.';
     }
 
     if (DateTime::createFromFormat('Y-m-d', $dateofbirth)) {
@@ -67,7 +70,7 @@ function validateDateOfBirth($dateofbirth) {
         $dateofbirth = DateTime::createFromFormat('d/m/Y', $dateofbirth);
     }
     else {
-        return 'Please enter a correct Date of Birth.';
+        return '[PHP] Please enter a correct Date of Birth.';
     }
 
     $time = new DateTime('now');
@@ -83,13 +86,13 @@ function validateDateOfBirth($dateofbirth) {
     $minDate = $date150YearsAgo->format('Y-m-d');
 
     if ($chosenDate <= $minDate){
-        return 'We really don\'t think you were born more than 150 years ago.';
+        return '[PHP] We really don\'t think you were born more than 150 years ago.';
     }
     else if ($chosenDate >= $todaysDate){
-        return 'You cannot be born after today.';
+        return '[PHP] You cannot be born after today.';
     }
     else if (!checkdate($chosenMonth, $chosenDay, $chosenYear)) {
-        return 'Please enter a correct Date of Birth.';
+        return '[PHP] Please enter a correct Date of Birth.';
     }
 
     return false;
@@ -125,14 +128,27 @@ function checkDateManually($dateofbirth) {
 
 
 //AGE VALIDATION//
+// function validateAge($age) {
+// 	if (empty($age)) {
+// 		return "[PHP] Please enter your age.";
+// 	}
+// 	else if (!preg_match("/^[0-151]$/", $age)) {
+// 		return "Please enter an age between 1 and 150";  
+// 	}
+// 	return false;
+// }
+
 function validateAge($age) {
-	if (empty($age)) {
-		return "[PHP] Please enter your age.";
-	}
-	else if (preg_match("/^[0-151]+$/", $age)) {
-		return true;  
-	}
-	return false;
+    if (empty($age)) {
+        return "[PHP] Please enter your age.";
+    }
+    else if((int)$age >= 151){
+        return "Age must be less than 150 years";
+    }
+    else if((int)$age < 1){
+        return "Age must be of 1 year or older";
+    }
+    return false;
 }
 //END OF AGE VALIDATION//
 
@@ -140,20 +156,29 @@ function validateAge($age) {
 
 //GENDER VALIDATION//
 function validateGender($gender) {
-	if ($gender == 'gender1') {
+	if (empty($gender)) {
 		return "[PHP] Please select a gender.";
 	}
 }
+
+// if ($gender == 'gender1') {
+//         return "[PHP] Please select a gender.";
+//     }
+// }
 //END OF GENDER VALIDATION//
 
 
 
 //MOVIE VALIDATION//
 function validateMovie($movie) {
-	if($movie == 'movie1') {
-		return "[PHP] Please select a movie.";
-	}
+	if(empty($movie)) {
+     return "[PHP] Please select a movie.";
+ }
 }
+    // if($movie == 'movie1') {
+// 		return "[PHP] Please select a movie.";
+// 	}
+// }
 //END OF MOVIE VALIDATION//
 
 

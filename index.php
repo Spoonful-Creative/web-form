@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$age = $_POST['age'];
 	$dateofbirth = $_POST['dateofbirth'];
 	$gender = !empty($_POST['gender']) ? $_POST['gender'] : '';
-	$movie = $_POST['movie'];
+	$movie = !empty($_POST['movie']) ? $_POST['movie'] : '';
 
 
 	$errors['name'] = validateName($name);

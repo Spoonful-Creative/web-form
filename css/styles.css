@@ -1,10 +1,175 @@
-body {
-	background-image: url('../img/form-background.jpeg');
-	background-size: cover;
-	background-repeat: no-repeat;	
+body{
+	background-image: url('../img/pattern-bg.jpg');
+	background-repeat: repeat;
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
-#form-body{
-background-color: rgba(255, 255, 255, 0.7);
-border-radius: 20px;
+h1{
+	text-align: left;
+	font-size: 5.5em;
+	font-weight: 600;
+	color: #ffffff;
+	font-style: black;
+	border-top: #ffc107 solid 3px; 
+	border-bottom: #ffc107 solid 3px;
+}
+
+h2{
+	text-align: center;
+	font-size: 3em;
+	font-weight: 400;
+	color: #ffc107;
+	font-style: black;
+}
+
+/*INPUT-FIELD STYLES*/
+/* label color */
+   .input-field label {
+     color: #000000;
+   }
+   /* label focus color */
+   /*.input-field input[type=text]:focus + label {
+     color: #000;
+   }*/
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #ffc107;
+     box-shadow: 0 1px 0 0 #ffc107;
+   }
+  	/* label underline focus color */
+   .input-field textarea[type=text]:focus {
+     border-bottom: 1px solid #ffc107;
+     box-shadow: 0 1px 0 0 #ffc107;
+   }
+	/* label underline focus color */
+   .input-field input[type=number]:focus {
+     border-bottom: 1px solid #ffc107;
+     box-shadow: 0 1px 0 0 #ffc107;
+   } 
+	/* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #ffc107;
+   }
+
+
+/*BUTTON STYLES*/
+#submitForm, #clearFields, #resetForm{
+	background-color: #ffc107;
+}
+
+.waves-effect.waves-amber .waves-ripple {
+     /* The alpha value allows the text and background color
+     of the button to still show through. */
+      background-color: rgba(255, 193, 7, 0.65);
+    }
+/*END BUTTON STYLES*/
+
+
+
+#form-fields{
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 5px;
+}
+
+.card-panel-small{
+	padding: 15px 20px 0px 20px;
+}
+
+.error{
+	margin-left: 3%;
+	background-color: #ffc107;
+	border-radius: 5px;
+	text-align: center;
+	color: #ffffff;
+}
+
+#form-page{
+	padding: 20px;
+	border-radius: 30px;
+	background-image: url('../img/form-background-opt-2.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+
+
+
+
+/*DATEPICKER STYLES*/
+.picker__weekday-display{
+  background-color: #000000;
+}
+
+.picker__date-display{
+  background-color: #ffc107;
+}
+
+.picker__day.picker__day--today{
+	color: #ffc107;
+}
+
+
+.picker__day .picker__day--today .picker__day--selected .picker__day--selected:hover, .picker--focused .picker__day--selected, {
+  background-color: #ffc107;
+  color: #ffffff;
+}
+
+
+.picker__today, .picker__close{
+	color: #ffc107;
+}
+
+
+.picker__nav--prev:hover, .picker__nav--next:hover{
+	background-color: rgba(255, 193, 7, 0.65);
+	}
+
+.picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected {
+    border-radius: 50%;
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+    background-color: #ffc107;
+    color: #ffffff;
+}
+
+button.picker__close:focus, button.picker__today:focus, button.picker__clear:focus{
+    background-color: #ffc107;
+    color: #ffffff;
+}
+/*END DATEPICKER STYLES*/
+
+/*DROPDOWN STYLES*/
+.dropdown-content li a, .dropdown-content li span{
+	color: #ffc107;
+}
+
+
+
+
+
+
+#center-page {
+	padding: 30vh;
+}
+
+#thanks-page{
+	width: 100%
+	padding: 20px;
+	border-radius: 10px;
+	background-color: #ffffff;
+/*	border: solid #ffc107 5px;*/
+}
+
+a{
+	color: #ffffff;
+}
+
+.highlight{
+	color: #000000;
+}
+
+
+label.name{
+	color: #ffc107;
 }
