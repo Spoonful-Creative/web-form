@@ -1,60 +1,81 @@
 <?php
-//NAME VALIDATION//
+//All functions will be called from this file
+
+function dd($data){
+    die(var_dump($data));
+}
+
+function e($value){
+    return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+}
+
+
+
+//      **NAME Validation**
 function validateName($name) {
+    // Checks a value had been entered 
 	if (empty($name)) {
-		return "[PHP] Please enter your full name.";
+		return "Please enter your full name";
 	}
+    // Must comply as a first/last name
 	else if (!preg_match("/\s/", $name)) {
-		return "[PHP] Please enter a valid full name.";
+		return "Please enter a valid full name";
 	}
+    // Maximum limit 40 characters *REQUIREMENT
 	else if(strlen($name) > 40){
-		return "[PHP] Full name cannot exceed 40 characters.";
+		return "Full name cannot exceed 40 characters";
 	}
 	return false;
 }
-//END OF NAME VALIDATION//
+//      **END NAME Validation**
 
 
 
-//EMAIL VALIDATION//
+//      **EMAIL Validation**
 function validateEmail($email) {
+    // Checks a value had been entered, tests if the email address entered is valid
 	if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
-		return "[PHP] Please enter a valid email address.";
+		return "Please enter a valid email address";
 	}
+    // Maximum limit 100 characters *REQUIREMENT
 	else if(strlen($email) > 100) {
-		return "[PHP] Email address cannot exceed 100 characters.";
+		return "Email address cannot exceed 100 characters";
 	}
 	return false;
 }
-//END OF EMAIL VALIDATION//
+//      **END EMAIL Validation**
 
 
 
-//ADDRESS VALIDATION//
+//      **ADDRESS Validation**
 function validateAddress($address) {
+    // Checks a value had been entered 
     if (empty($address)) {
-    return "[PHP] Please enter an address";
+    return "Please enter your physical address";
     }
+    // Must include a number and space at the beginning 
     else if (!preg_match("/^[0-9]+\ +[a-zA-Z]/", $address)) {
-       return "[PHP] Please enter your physical address";
+       return "Please enter your physical address including street number";
     }
+    // Maximum limit 200 characters *REQUIREMENT
     else if(strlen($address) > 200){
-    return "[PHP] Physical address cannot exceed 200 characters.";
+    return "Physical address cannot exceed 200 characters";
     }
     return false;
 }
-//END OF ADDRESS VALIDATION//
+//      **END ADDRESS Validation**
 
 
 
-//DOB VALIDATION//
+//      **DOB Validation**
 function validateDateOfBirth($dateofbirth) {
+    // Checks a value had been entered 
     if (empty($dateofbirth)) {
-        return '[PHP] Date of Birth is required.';
+        return 'Date of Birth is required';
     }
 
     if (!checkDateManually($dateofbirth)) {
-        return '[PHP] Please enter a correct Date of Birth.';
+        return 'Please enter a correct Date of Birth';
     }
 
     if (DateTime::createFromFormat('Y-m-d', $dateofbirth)) {
@@ -70,7 +91,7 @@ function validateDateOfBirth($dateofbirth) {
         $dateofbirth = DateTime::createFromFormat('d/m/Y', $dateofbirth);
     }
     else {
-        return '[PHP] Please enter a correct Date of Birth.';
+        return 'Please enter a correct Date of Birth';
     }
 
     $time = new DateTime('now');
@@ -86,13 +107,13 @@ function validateDateOfBirth($dateofbirth) {
     $minDate = $date150YearsAgo->format('Y-m-d');
 
     if ($chosenDate <= $minDate){
-        return '[PHP] We really don\'t think you were born more than 150 years ago.';
+        return 'We really don\'t think you were born more than 150 years ago';
     }
     else if ($chosenDate >= $todaysDate){
-        return '[PHP] You cannot be born after today.';
+        return 'You cannot be born after today';
     }
     else if (!checkdate($chosenMonth, $chosenDay, $chosenYear)) {
-        return '[PHP] Please enter a correct Date of Birth.';
+        return 'Please enter a correct Date of Birth';
     }
 
     return false;
@@ -123,72 +144,46 @@ function checkDateManually($dateofbirth) {
 
     return false;
 }
-//END OF DOB VALIDATION//
+//      **END DOB Validation**
 
 
 
-//AGE VALIDATION//
-// function validateAge($age) {
-// 	if (empty($age)) {
-// 		return "[PHP] Please enter your age.";
-// 	}
-// 	else if (!preg_match("/^[0-151]$/", $age)) {
-// 		return "Please enter an age between 1 and 150";  
-// 	}
-// 	return false;
-// }
-
+//      **AGE Validation**
 function validateAge($age) {
+    // Checks a value had been entered 
     if (empty($age)) {
-        return "[PHP] Please enter your age.";
+        return "Please enter your age";
     }
+    // Inserted value must not exceed 150
     else if((int)$age >= 151){
         return "Age must be less than 150 years";
     }
+    // Inserted value must be 1 or greater
     else if((int)$age < 1){
         return "Age must be of 1 year or older";
     }
     return false;
 }
-//END OF AGE VALIDATION//
+//      **END AGE Validation**
 
 
 
-//GENDER VALIDATION//
+//      ** GENDER Validation**
 function validateGender($gender) {
+    // Checks a value had been entered 
 	if (empty($gender)) {
-		return "[PHP] Please select a gender.";
+		return "Please select a gender";
 	}
 }
-
-// if ($gender == 'gender1') {
-//         return "[PHP] Please select a gender.";
-//     }
-// }
-//END OF GENDER VALIDATION//
+//      **END GENDER Validation**
 
 
 
-//MOVIE VALIDATION//
+//      **MOVIE Validation**
 function validateMovie($movie) {
+    // Checks a value had been entered 
 	if(empty($movie)) {
-     return "[PHP] Please select a movie.";
+     return "Please select a movie";
  }
 }
-    // if($movie == 'movie1') {
-// 		return "[PHP] Please select a movie.";
-// 	}
-// }
-//END OF MOVIE VALIDATION//
-
-
-
-function dd($data)
-{
-	die(var_dump($data));
-}
-
-function e($value)
-{
-	return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
-}
+ //      **END MOVIE Validation**
