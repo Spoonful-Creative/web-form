@@ -14,9 +14,9 @@
 		var today = new Date();
 		today.setFullYear( today.getFullYear() - 150 );
 		$('.datepicker').pickadate({
-			format: 'dd/mm/yyyy',
 		    selectMonths: true, 
 		    selectYears: 150,
+		    format: 'mm/dd/yyyy',
 		    min: today,
 		    max: new Date()
 		  });

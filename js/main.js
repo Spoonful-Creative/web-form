@@ -156,6 +156,19 @@ function calculateAge() {
 
 
 
+//		**MATERALIZE Date Picker**
+var today = new Date();
+		today.setFullYear( today.getFullYear() - 150 );
+		$('.datepicker').pickadate({
+		    selectMonths: true, 
+		    selectYears: 150,
+		    format: 'mm/dd/yyyy',
+		    min: today,
+		    max: new Date()
+		  });
+//		**END MATERALIZE Date Picker**
+
+
 //      **GENDER Validation**
 
 function validateGender() {
