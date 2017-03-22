@@ -55,7 +55,7 @@ function validateAddress($address) {
     }
     // Must include a number and space at the beginning 
     else if (!preg_match("/^[0-9]+\ +[a-zA-Z]/", $address)) {
-       return "Please enter your physical address including street number";
+       return "Please include your street number";
     }
     // Maximum limit 200 characters *REQUIREMENT
     else if(strlen($address) > 200){

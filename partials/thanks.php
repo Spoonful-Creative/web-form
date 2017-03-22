@@ -10,8 +10,8 @@
 					</div>
 			
 					
-					<h2 class="text-center">Thanks for the message </br><span class="highlight"><?= $name ?></span></h2>
-					<h2 class="text-center text-muted">We will be in contact shortly via </br><span class="highlight"><?= $email ?></span></h2>
+					<h2 class="text-center">Thanks for the message </br><span><?= $name ?></span></h2>
+					<h2 class="text-center text-muted">We will be in contact shortly via </br><span><?= $email ?></span></h2>
 
 
 					<div class="right">
