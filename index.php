@@ -1,13 +1,18 @@
 <?php
 
+
 require 'includes/function.php';
 
-//define variables and set to empty values
+
+//Define variables and set to empty values-----------
 $name = $email = $address = $age = $dateofbirth = $gender = $movie = '';
 $errors = [];
 
+
+//Request method is using POST(SECURE)-----------
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-//Add data from form
+
+//Adds data from form-----------
 	$name = $_POST['name'];
 	$email = $_POST['email'];
 	$address = $_POST['address'];
@@ -26,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$errors['gender'] = validateGender($gender);
 
 
+//Email function for proceeding to thanks.php-----------
 	if (!$errors['name'] && !$errors['email'] && !$errors['address'] && !$errors['dateofbirth'] && !$errors['age'] && !$errors['movie'] && !$errors['gender']) {
 		$formcontent=" From: $name \n Email: $email \n Message: $address";
 		$recipient = "pughsinead@gmail.com";
@@ -39,6 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 }
 
 
+//HTML Components-----------
 require 'partials/header.php';
 require 'partials/form.php';
 require 'partials/footer.php';
