@@ -24,15 +24,6 @@ function validate() {
 		return false;
 }
 
-var today = new Date();
-today.setFullYear( today.getFullYear() - 150 );
-$('.datepicker').pickadate({
-    selectMonths: true, 
-    selectYears: 150,
-    min: today,
-    max: new Date()
-  });
-
 
 //NAME VALIDATION//
 function validateName(){
@@ -42,10 +33,12 @@ function validateName(){
 	if (pos1 >= 0 && fullName.length > 3 && fullName.length < 40) {
 		
 		document.getElementById('nameError').innerHTML = "";
+		document.getElementById('nameError').style.padding = "";
 		return true;
 	}
 	else 
-		document.getElementById('nameError').innerHTML = "[JS] Please enter a valid full name.";
+		document.getElementById('nameError').innerHTML = "Please enter a valid full name.";
+		document.getElementById('nameError').style.padding = "5px";
 	return false;
 }
 //END OF NAME VALIDATION//
@@ -61,11 +54,13 @@ function validateEmail(){
 	if (pos1 >= 0 && pos2 >= 0 && mailAddress.length < 100) {
 
 		document.getElementById('emailError').innerHTML = "";
+			document.getElementById('emailError').style.padding = "";
 		return true;
 	}
 	else 
 	{
-		document.getElementById('emailError').innerHTML = "[JS] Please enter a valid e-mail address.";
+		document.getElementById('emailError').innerHTML = "Please enter a valid e-mail address.";
+		document.getElementById('emailError').style.padding = "5px";
 		return false;
 	}
 }
@@ -82,11 +77,13 @@ function validateAddress(){
 	if (pos1 >= 0 && address.length < 200) {
 
 		document.getElementById('addressError').innerHTML = "";
+		document.getElementById('addressError').style.padding = "";
 		return true;
 	}
 	else 
 	{
-		document.getElementById('addressError').innerHTML = address + "[JS] Please enter your physical address.";
+		document.getElementById('addressError').innerHTML = address + "Please enter your physical address.";
+		document.getElementById('addressError').style.padding = "5px";
 		return false;
 	}
 }
@@ -98,11 +95,13 @@ function validateAddress(){
 function validateAge(){
    age= document.getElementById("age").value;
    if(age === ""){
-     document.getElementById("ageError").innerHTML="[JS] Please enter your age";
+     document.getElementById("ageError").innerHTML="Please enter your age";
+     document.getElementById('ageError').style.padding = "5px";
    return false;
    }
   else{
    document.getElementById("ageError").innerHTML= "";
+    document.getElementById('ageError').style.padding = "";
     return true;
   }
 }
@@ -117,12 +116,14 @@ function validateDateOfBirth(){
 	var age = document.getElementById('age').value;
 	
 	if (calculatedAge != age || parseInt(age) >= 150 || parseInt(age) < 0) {
-		document.getElementById("ageError").innerHTML = "[JS] Please enter a valid age";
+		document.getElementById("dateofbirthError").innerHTML = "Please enter a date of birth";
+		document.getElementById('dateofbirthError').style.padding = "5px";
 		return false;
 	}
 	else 
 	{
-		document.getElementById("ageError").innerHTML = "is a valid age";
+		document.getElementById("dateofbirthError").innerHTML = "";
+		document.getElementById('dateofbirthError').style.padding = "";
 		return true;
 	}
 }
@@ -147,6 +148,16 @@ function calculateAge() {
 }
 //END OF DOB VALIDATION//
 
+// var today = new Date();
+
+// today.setFullYear( today.getFullYear() - 150 );
+// $('.datepicker').pickadate({
+// 	format: 'mm/dd/yyyy',
+//     selectMonths: true, 
+//     selectYears: 150,
+//     min: today,
+//     max: new Date()
+//   });
 
 
 
@@ -154,12 +165,14 @@ function calculateAge() {
 function validateGender() {
 	gender = document.getElementById('gender').selectedIndex ;
 	if (gender == 0){
-		document.getElementById('genderError').innerHTML = "[JS] Please select a gender.";
+		document.getElementById('genderError').innerHTML = "Please select a gender.";
+		document.getElementById('genderError').style.padding = "5px";
 		return false
 	}
 	else 
 	{
 		document.getElementById('genderError').innerHTML = "";
+		document.getElementById('genderError').style.padding = "";
 		return true
 	}
 }
@@ -172,18 +185,69 @@ function validateGender() {
 function validateMovie(){
 	movie = document.getElementById('movie').selectedIndex ;
 	if (movie == 0){
-		document.getElementById('movieError').innerHTML = "[JS] Please select a movie.";
+		document.getElementById('movieError').innerHTML = "Please select a movie.";
+		document.getElementById('movieError').style.padding = "5px";
 		return false
 	}
 	else 
 	{
 		document.getElementById('movieError').innerHTML = "";
+		document.getElementById('movieError').style.padding = "";
 		return true
 	}
 }
 //END OF MOVIE VALIDATION//
 
+//Reset Form
+function clearForm(){
+	document.getElementById("form").reset();
 
-$(document).ready(function() {
-    $('select').material_select();
-  });
+	clearName()
+	clearEmail()
+	clearAddress()
+	clearDateOfBirth()
+	clearAge()
+	clearGender()
+	clearMovie()
+
+function clearName(){
+document.getElementById("nameError").innerHTML = "";
+document.getElementById('nameError').style.padding = "";
+}
+
+function clearEmail(){
+document.getElementById("emailError").innerHTML = "";
+document.getElementById('emailError').style.padding = "";
+}
+
+function clearAddress(){
+document.getElementById("addressError").innerHTML = "";
+document.getElementById('addressError').style.padding = "";
+}
+
+function clearDateOfBirth(){
+document.getElementById("dateofbirthError").innerHTML = "";
+document.getElementById('dateofbirthError').style.padding = "";
+}
+
+function clearAge(){
+document.getElementById("ageError").innerHTML = "";
+document.getElementById('ageError').style.padding = "";
+}
+
+function clearGender(){
+document.getElementById("genderError").innerHTML = "";
+document.getElementById('genderError').style.padding = "";
+}
+
+function clearMovie(){
+document.getElementById("movieError").innerHTML = "";
+document.getElementById('movieError').style.padding = "";
+}
+
+}
+
+
+// $(document).ready(function() {
+//     $('select').material_select();
+//   });
