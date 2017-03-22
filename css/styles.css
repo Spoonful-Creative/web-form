@@ -1,3 +1,5 @@
+/* WEBFORM STYLES - INDEX PAGE */
+/* Background Display */
 body{
 	background-image: url('../img/pattern-bg.jpg');
 	background-repeat: repeat;
@@ -5,6 +7,17 @@ body{
 	padding-bottom: 50px;
 }
 
+#form-page{
+	padding: 20px;
+	border-radius: 30px;
+	background-image: url('../img/form-background-opt.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+
+
+/* Type Styles */
 h1{
 	text-align: left;
 	font-size: 5.5em;
@@ -23,50 +36,9 @@ h2{
 	font-style: black;
 }
 
-/*INPUT-FIELD STYLES*/
-/* label color */
-   .input-field label {
-     color: #000000;
-   }
-   /* label focus color */
-   /*.input-field input[type=text]:focus + label {
-     color: #000;
-   }*/
-   /* label underline focus color */
-   .input-field input[type=text]:focus {
-     border-bottom: 1px solid #ffc107;
-     box-shadow: 0 1px 0 0 #ffc107;
-   }
-  	/* label underline focus color */
-   .input-field textarea[type=text]:focus {
-     border-bottom: 1px solid #ffc107;
-     box-shadow: 0 1px 0 0 #ffc107;
-   }
-	/* label underline focus color */
-   .input-field input[type=number]:focus {
-     border-bottom: 1px solid #ffc107;
-     box-shadow: 0 1px 0 0 #ffc107;
-   } 
-	/* icon prefix focus color */
-   .input-field .prefix.active {
-     color: #ffc107;
-   }
 
 
-/*BUTTON STYLES*/
-#submitForm, #clearFields, #resetForm{
-	background-color: #ffc107;
-}
-
-.waves-effect.waves-amber .waves-ripple {
-     /* The alpha value allows the text and background color
-     of the button to still show through. */
-      background-color: rgba(255, 193, 7, 0.65);
-    }
-/*END BUTTON STYLES*/
-
-
-
+/* Input Areas (Name:, Address: etc) */
 #form-fields{
 	background-color: rgba(255, 255, 255, 0.7);
 	border-radius: 5px;
@@ -76,6 +48,9 @@ h2{
 	padding: 15px 20px 0px 20px;
 }
 
+
+
+/* Error Messages */
 .error{
 	margin-left: 3%;
 	background-color: #ffc107;
@@ -84,19 +59,47 @@ h2{
 	color: #ffffff;
 }
 
-#form-page{
-	padding: 20px;
-	border-radius: 30px;
-	background-image: url('../img/form-background-opt-2.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
+
+
+/* Button Styles */
+#submitForm, #clearFields, #resetForm{
+	background-color: #ffc107;
+	color: #ffffff;
+}
+
+.waves-effect.waves-amber .waves-ripple {
+     /* The alpha value allows the text and background color
+     of the button to still show through. */
+      background-color: rgba(255, 193, 7, 0.65);
 }
 
 
 
+/* Input Field Styles */
+/* label color */
+   .input-field label {
+     color: #000000;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus, .input-field textarea[type=text]:focus, .input-field input[type=number]:focus {
+     border-bottom: 1px solid #ffc107;
+     box-shadow: 0 1px 0 0 #ffc107;
+   }
+	/* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #ffc107;
+   }
 
 
-/*DATEPICKER STYLES*/
+
+/* Dropdown Styles*/
+.dropdown-content li a, .dropdown-content li span{
+	color: #ffc107;
+}
+
+
+
+/* Datepicker Styles */
 .picker__weekday-display{
   background-color: #000000;
 }
@@ -109,17 +112,14 @@ h2{
 	color: #ffc107;
 }
 
-
-.picker__day .picker__day--today .picker__day--selected .picker__day--selected:hover, .picker--focused .picker__day--selected, {
+.picker__day .picker__day--today .picker__day--selected .picker__day--selected:hover, .picker--focused .picker__day--selected {
   background-color: #ffc107;
   color: #ffffff;
 }
 
-
 .picker__today, .picker__close{
 	color: #ffc107;
 }
-
 
 .picker__nav--prev:hover, .picker__nav--next:hover{
 	background-color: rgba(255, 193, 7, 0.65);
@@ -137,68 +137,22 @@ button.picker__close:focus, button.picker__today:focus, button.picker__clear:foc
     background-color: #ffc107;
     color: #ffffff;
 }
-/*END DATEPICKER STYLES*/
-
-/*DROPDOWN STYLES*/
-.dropdown-content li a, .dropdown-content li span{
-	color: #ffc107;
-}
 
 
+
+/* WEBFORM STYLES - THANKS PAGE */
+/* Page Containment */
 #center-page {
 	padding: 10vh;
 }
 
 #thanks-page{
-	/*margin-top: */
 	padding: 20px;
 	border-radius: 10px;
 	background-color: #ffffff;
 	border: solid #ffc107 5px;
 }
 
-a{
-	color: #ffffff;
-}
-
-.highlight{
+span{
 	color: #000000;
 }
-
-
-label.name{
-	color: #ffc107;
-}
-
-/*@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
-	h1{
-	text-align: left;
-	font-size: 5.5em;
-	font-weight: 600;
-	color: #ffffff;
-	font-style: black;
-	border-top: #ffc107 solid 3px; 
-	border-bottom: #ffc107 solid 3px;
-}
-
-	h2{
-	text-align: center;
-	font-size: 1.5em;
-	font-weight: 400;
-	color: #ffc107;
-	font-style: black;
-	}
-	
-	img#open-mail{
-		width: 100px;
-		height: 100px;
-	}	
-
-	/*BUTTON STYLES*/
-/*#submitForm, #clearFields, #resetForm{
-	background-color: #ffc107;
-	position: center;
-}
-}
-
-*/*/
